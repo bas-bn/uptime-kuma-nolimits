@@ -359,12 +359,12 @@ class Monitor extends BeanModel {
                 beatInterval = 1;
             }
 
-            if (demoMode) {
-                if (beatInterval < 20) {
-                    console.log("beat interval too low, reset to 20s");
-                    beatInterval = 20;
-                }
-            }
+            // if (demoMode) {
+            //     if (beatInterval < 20) {
+            //         console.log("beat interval too low, reset to 20s");
+            //         beatInterval = 20;
+            //     }
+            // }
 
             // Expose here for prometheus update
             // undefined if not https
@@ -1507,9 +1507,9 @@ class Monitor extends BeanModel {
         if (this.interval > MAX_INTERVAL_SECOND) {
             throw new Error(`Interval cannot be more than ${MAX_INTERVAL_SECOND} seconds`);
         }
-        if (this.interval < MIN_INTERVAL_SECOND) {
-            throw new Error(`Interval cannot be less than ${MIN_INTERVAL_SECOND} seconds`);
-        }
+        // if (this.interval < MIN_INTERVAL_SECOND) {
+        //     throw new Error(`Interval cannot be less than ${MIN_INTERVAL_SECOND} seconds`);
+        // }
 
         if (this.type === "ping") {
             // ping parameters validation
