@@ -37,7 +37,7 @@
         "build-docker-base": "docker buildx build -f docker/debian-base.dockerfile --platform linux/amd64,linux/arm64,linux/arm/v7 -t louislam/uptime-kuma:base2 --target base2 . --push",
         "build-docker-base-slim": "docker buildx build -f docker/debian-base.dockerfile --platform linux/amd64,linux/arm64,linux/arm/v7 -t louislam/uptime-kuma:base2-slim --target base2-slim . --push",
         "build-docker-builder-go": "docker buildx build -f docker/builder-go.dockerfile --platform linux/amd64,linux/arm64,linux/arm/v7 -t louislam/uptime-kuma:builder-go . --push",
-        "build-docker-nolimits": "npm run build && docker build -f docker/dockerfile --platform linux/arm64 -t basbn/uptime-kuma-nolimits:2.0.2 --target nightly .",
+        "build-docker-nolimits": "npm run build && docker buildx build -f docker/dockerfile --platform linux/arm64 -t basbn/uptime-kuma-nolimits:2.0.2 --target nightly .",
         "build-docker-pr-test": "docker buildx build -f docker/dockerfile --platform linux/amd64,linux/arm64 -t louislam/uptime-kuma:pr-test2 --target pr-test2 . --push",
         "upload-artifacts": "node extra/release/upload-artifacts.mjs",
         "upload-artifacts-beta": "node extra/release/upload-artifacts-beta.mjs",
